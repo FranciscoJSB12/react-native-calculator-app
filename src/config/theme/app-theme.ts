@@ -44,6 +44,7 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.darkGray,
         borderRadius: 100,
         justifyContent: 'center',
+        alignItems: 'center',
         marginHorizontal: 10,
     },
     buttonText: {
