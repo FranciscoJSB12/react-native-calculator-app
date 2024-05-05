@@ -22,6 +22,11 @@ export const useCalculator = () => {
         }
     }, [number]);
 
+    useEffect(() => {
+        const subResult = calculateSubResult();
+        setPrevNumber(`${subResult}`);
+    }, [formula]);
+
     const buildNumber = (numberString: string):void => {
         if (numberString === '.' && number.includes(numberString)) return;
 
@@ -73,12 +78,13 @@ export const useCalculator = () => {
     }
 
     const setLastNumber = ():void => {
+        calculateResult();
         if(number.endsWith('.')) {
             setPrevNumber(num => num.slice(0, -1));
         } else {
             setPrevNumber(number);
         }
-
+        
         setNumber('0');
     }
 
